@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i id="minus"class="fas fa-minus"></i></button>
+                           <button class="btn btn-default"><i onclick="productHandle('mobile', false)" class="fas fa-minus"></i></button>
                            <input id="mobileCount" type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i id="plus" class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i onclick="productHandle('mobile' , true)" class="fas fa-plus"></i></button>
                         </div>
                         <h5>$ <span id="mobilePrice">1259</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i id="minusCover" class="fas fa-minus"></i></button>
-                           <input id="coverCount" type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i id="plusCover" class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i onclick="productHandle('case' , false)" class="fas fa-minus"></i></button>
+                           <input id="caseCount" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i onclick="productHandle('case', true)" class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$ <span id="coverPrice">59</span></h5>
+                        <h5>$ <span id="casePrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="subtotal">1,318</span></h5>
+                        <h5>$ <span id="tax">0</span></h5>
+                        <h5>$ <span id="total">1,318</span></h5>
                      </div>
                   </div>
                </div>
@@ -77,60 +77,6 @@
          </div>
       </div>
    </section>
-   <script>
-      const plus = document.getElementById("plus");
-      plus.addEventListener("click", function(){
-         const mobile1 = document.getElementById("mobileCount").value;
-         const mobile2 = parseInt(mobile1);
-         const mobile3 = mobile2+1;
-         document.getElementById("mobileCount").value = mobile3;
-
-         const price1 = document.getElementById("mobilePrice").innerText;
-         console.log(price1);
-         const price2 = parseInt(price1);
-         const finalPrice = price2 + 1259;
-         console.log(finalPrice);
-         document.getElementById("mobilePrice").innerText = finalPrice;
-      })
-      const minus = document.getElementById("minus");
-      minus.addEventListener("click", function(){
-         const minusMobile = document.getElementById("mobileCount").value;
-         const minusMobile2 = parseInt(minusMobile);
-         const minusMobile3 = minusMobile2 - 1;
-         document.getElementById("mobileCount").value = minusMobile3;
-
-         const price1 = document.getElementById("mobilePrice").innerText;
-         console.log(price1);
-         const price2 = parseInt(price1);
-         const finalPrice = price2 - 1259;
-         console.log(finalPrice);
-         document.getElementById("mobilePrice").innerText = finalPrice;
-      })
-      const plusCover = document.getElementById("plusCover");
-      plusCover.addEventListener("click", function(){
-         const cover1 = document.getElementById("coverCount").value;
-         const cover2 = parseInt(cover1);
-         const cover3 = cover2+1;
-         document.getElementById("coverCount").value = cover3;
-
-         const coverPrice1 = document.getElementById("coverPrice").innerText;
-         const coverPrice2 = parseInt(coverPrice1);
-         const finalCoverPrice = coverPrice2 + 59;
-         document.getElementById("coverPrice").innerText = finalCoverPrice;
-      })
-      const minusCover = document.getElementById("minusCover");
-      minusCover.addEventListener("click", function(){
-         const minusCover1 = document.getElementById("coverCount").value;
-         const minusCover2 = parseInt(minusCover1);
-         const minusCover3 = minusCover2 - 1;
-         document.getElementById("coverCount").value = minusCover3;
-
-         const coverPrice1 = document.getElementById("coverPrice").innerText;
-         const coverPrice2 = parseInt(coverPrice1);
-         const finalCoverPrice = coverPrice2 - 59;
-         document.getElementById("coverPrice").innerText = finalCoverPrice;
-      })
-   </script>
+   <script src="script.js"></script>
 </body>
-
 </html>
